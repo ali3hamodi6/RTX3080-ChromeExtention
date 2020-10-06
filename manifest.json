@@ -1,0 +1,40 @@
+{
+  "name": "RTX3080",
+  "version": "1.0.0",
+  "description": "RTX3080",
+  "icons": {
+    "128": "browserActionIcon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.bestbuy.com/site/computer-cards-components/video-graphics-cards/*"],
+      "js": [
+        "./contentScript.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://www.newegg.com/p/pl?d=rtx*"],
+      "js": [
+        "./contentScript2.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["./background.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "web_accessible_resources": [
+    "sound.mp3", "swiftly.mp3"
+  ],
+  "browser_action": {
+      "default_title": "RTX3080",
+      "default_icon": "browserActionIcon.png"
+  },
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

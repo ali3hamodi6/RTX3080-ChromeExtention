@@ -14,7 +14,7 @@
       "run_at": "document_end"
     },
     {
-      "matches": ["https://www.newegg.com/p/pl?d=rtx*"],
+      "matches": ["https://www.newegg.com/p/*"],
       "js": [
         "./contentScript2.js"
       ],

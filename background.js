@@ -10,7 +10,7 @@ chrome.browserAction.onClicked.addListener(()=>{
         }
     });
 
-    var neweggURL = "https://www.newegg.com/p/pl?d=rtx+3080"
+    var neweggURL = "https://www.newegg.com/p/pl?N=100007709%20601326374%204841%20601357282&cm_sp=Cat_video-Cards_1-_-Visnav-_-Gaming-Video-Cards_1"
     chrome.tabs.create({url: neweggURL}, (tab) => {
         if (chrome.runtime.lastError) {
             return;

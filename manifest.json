@@ -9,14 +9,21 @@
     {
       "matches": ["https://www.bestbuy.com/site/computer-cards-components/video-graphics-cards/*"],
       "js": [
-        "./contentScript.js"
+        "./bestbuyScript.js"
       ],
       "run_at": "document_end"
     },
     {
       "matches": ["https://www.newegg.com/p/*"],
       "js": [
-        "./contentScript2.js"
+        "./neweggScript.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://www.amazon.com/stores/page/*"],
+      "js": [
+        "./amazonScript.js"
       ],
       "run_at": "document_end"
     }
@@ -29,12 +36,12 @@
     "tabs"
   ],
   "web_accessible_resources": [
-    "sound.mp3", "swiftly.mp3"
+    "sound.mp3", "swiftly.mp3", "piece-of-cake.mp3"
   ],
   "browser_action": {
+      "default_popup": "popup.html",
       "default_title": "RTX3080",
       "default_icon": "browserActionIcon.png"
   },
-  "manifest_version": 2,
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "manifest_version": 2
 }

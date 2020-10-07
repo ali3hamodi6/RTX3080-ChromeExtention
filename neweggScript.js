@@ -8,14 +8,16 @@ async function lookForButton(){
     var viewDetailsElm = document.evaluate(viewDetailsBtnXPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     
     if(addToCartElm != null){
+        await wait(1000);
         addToCartElm.click();
         chrome.runtime.sendMessage({'messageName': "buttonFoundOnNewEgg"});
     }else if(viewDetailsElm != null){
+        await wait(1000);
         viewDetailsElm.click();
         chrome.runtime.sendMessage({'messageName': "buttonFoundOnNewEgg"});
-    }else{
+    }else {
         chrome.runtime.sendMessage({'messageName': "buttonNotFound"});
-        await wait(7000);
+        await wait(5000);
         window.location.reload() 
     }
 }

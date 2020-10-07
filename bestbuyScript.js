@@ -5,6 +5,7 @@ async function lookForButton(){
     var addToCartElm = document.evaluate(addToCartBtnXPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     
     if(addToCartElm != null){
+        await wait(1000);
         addToCartElm.click();
         chrome.runtime.sendMessage({'messageName': "buttonFoundOnBestBuy"});
     }else{
